@@ -50,3 +50,17 @@ ScrollReveal().reveal('.home-content,.heading', { origin:'top' });
 ScrollReveal().reveal('.home-content h1,.about-img', { origin:'left' });
 ScrollReveal().reveal('.home-content p,.about-container', { origin:'right' });
 ScrollReveal().reveal('.home-img,.serives-container,.portfolio-box,.contact form', { origin:'bottom' });
+
+const toggleThemeBtn = document.getElementById('toggle-theme');
+let isLightMode = false;
+
+toggleThemeBtn.addEventListener('click', () => {
+    isLightMode = !isLightMode;
+    if (isLightMode) {
+        document.body.classList.add('light-mode');
+        toggleThemeBtn.textContent = 'Lights Off';
+    } else {
+        document.body.classList.remove('light-mode');
+        toggleThemeBtn.textContent = 'Lights On';
+    }
+});
